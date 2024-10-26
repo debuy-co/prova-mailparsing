@@ -19,6 +19,10 @@ function App() {
     setSelectedEmail(email);
   };
 
+  //TODO: ok funziona, ma bisogna creare una memoria a lungo termine per salvare tutte le mail altrimenti ad ogni riavvio si cancellano .
+  //TODO: da creare un tasto che aggiorna per vedere se ci sono nuove mail, o viene fatto in automatico ogni tot ?
+  //TODO: non legge tutte le mail in ingresso
+
   return (
     <div className="App">
       <header>

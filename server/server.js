@@ -8,9 +8,9 @@ app.use(cors()); // Allow cross-origin requests from React
 
 // IMAP configuration to connect to Apple Mail (or other email providers)
 const imapConfig = {
-  user: "your-email@icloud.com", // Your Apple iCloud email
-  password: "your-password", // Your email password or app-specific password
-  host: "imap.mail.me.com", // iCloud IMAP server
+  user: "marco.demarco123@yandex.com",
+  password: "iqscjqorsrhgltka",
+  host: "imap.yandex.com",
   port: 993, // IMAP port
   tls: true, // Secure connection
 };
