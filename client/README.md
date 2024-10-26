@@ -12,3 +12,12 @@ Overview of the Steps
     3.	Install and configure the imap package for accessing emails.
     4.	Parse the email content using mailparser.
     5.	Connect React to Node.js using HTTP requests.
+
+More info:
+
+Step 2: Setting Up Node.js (Backend)
+it will use several libraries such as
+• express: For creating a web server.
+• imap: To access emails via IMAP protocol.
+• mailparser: To parse email content and attachments.
+• cors: To allow cross-origin requests from React to the server.
