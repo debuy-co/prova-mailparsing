@@ -1,0 +1,44 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.email-list {
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+  float: left;
+  width: 40%;
+}
+
+.email-item {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.email-item:hover {
+  background-color: #f0f0f0;
+}
+
+.email-details {
+  float: left;
+  padding-left: 20px;
+  width: 55%;
+}
+
+.email-details h2 {
+  margin-top: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
