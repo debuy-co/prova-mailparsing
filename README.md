@@ -1,8 +1,14 @@
-# React + Vite
+We’re creating a web app with two main parts:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    1.	Client-side (React): A user-friendly interface that fetches and displays emails.
+    2.	Server-side (Node.js): Handles the connection to an email account (using IMAP), fetches emails, and parses them.
 
-Currently, two official plugins are available:
+IMAP (Internet Message Access Protocol) is used by email clients to retrieve emails from a mail server. For example, Apple Mail and Gmail use IMAP. Using the imap package, we will connect to the email server and retrieve unread emails and attachments.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Overview of the Steps
+
+    1.	Set up the React frontend.
+    2.	Create a Node.js server.
+    3.	Install and configure the imap package for accessing emails.
+    4.	Parse the email content using mailparser.
+    5.	Connect React to Node.js using HTTP requests.

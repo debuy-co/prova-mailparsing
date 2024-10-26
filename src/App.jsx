@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [emails, setEmails] = useState([]);
+
+  // Fetch emails from the backend (Node.js server)
+  useEffect(() => {
+    fetch("http://localhost:3001/api/emails") //fetch it’s a JavaScript function that makes HTTP requests to our backend to get the emails.
+      .then((response) => response.json())
+      .then((data) => setEmails(data))
+      .catch((error) => console.error("Error fetching emails:", error));
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <h1>Email Parser</h1>
+      {emails.length > 0 ? (
+        emails.map((email, index) => (
+          <div key={index}>
+            <h2>{email.subject}</h2>
+            <p>From: {email.from}</p>
+            <p>{email.text}</p>
+            {email.attachments && email.attachments.length > 0 && (
+              <div>
+                <h3>Attachments:</h3>
+                {email.attachments.map((attachment, idx) => (
+                  <div key={idx}>
+                    <p>
+                      {attachment.filename} ({attachment.size} bytes)
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      ) : (
+        <p>No emails available.</p>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
